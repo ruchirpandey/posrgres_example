@@ -69,6 +69,7 @@ def add_book_form():
 
 @app.route("/addnew")
 def add_holiday():
+    #holiday added
     month=request.args.get('month')
     date=request.args.get('date')
     event=request.args.get('event')
