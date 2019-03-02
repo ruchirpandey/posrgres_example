@@ -27,9 +27,9 @@ https://books-example.herokuapp.com/getholidays
 (for id=1)  
 https://books-example.herokuapp.com/get/1
    
-## Add a book
+## Add a holiday
 (for month=Twilight, date=Stephenie Meyer, event=2006)  
 [https://books-example.herokuapp.com/addnew?month=Twilight&date=Stephenie Meyer&event=2006](https://books-example.herokuapp.com/addnew?month=Twilight&date=Stephenie%20Meyer&event=2006)
    
 ## Add through html form
-https://books-example.herokuapp.com/add/holiday
+https://kirti1231.herokuapp.com/add/holiday
