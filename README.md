@@ -5,6 +5,7 @@ This is a Flask+PostgreSQL example web application for deplying on Heroku.,
 This appliation can add and retrieve book details 
 Deployed project is,
   https://books-example.herokuapp.com/
+  https://kirti1231.herokuapp.com
 
 ## Get all data
 https://books-example.herokuapp.com/getall
