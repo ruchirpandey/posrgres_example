@@ -27,6 +27,8 @@ class Book(db.Model):
 class Holiday(db.Model):
     __tablename__ = 'holidays'
 
+    #this is example
+
     id = db.Column(db.Integer, primary_key=True)
     month = db.Column(db.String())
     date = db.Column(db.Integer)
