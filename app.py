@@ -67,5 +67,23 @@ def add_book_form():
             return(str(e))
     return render_template("getdata.html")
 
+@app.route("/addnew")
+def add_holiday():
+    month=request.args.get('month')
+    date=request.args.get('date')
+    event=request.args.get('event')
+    try:
+        holiday=Holiday(
+            month=month,
+            date=date,
+            event=event
+        )
+        db.session.add(book)
+        db.session.commit()
+        return "Holiday added. holiday id={}".format(holiday.id)
+    except Exception as e:
+        return(str(e))
+
+
 if __name__ == '__main__':
-    app.run()
+    app.run()ss
