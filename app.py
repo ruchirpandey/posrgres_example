@@ -90,8 +90,8 @@ def add_holiday():
 @app.route("/getholidays")
 def get_holidays():
     try:
-        holidays=Holiday.query.all()
-        return  jsonify([e.serialize() for e in holidays])
+        holiday=Holiday.query.all()
+        return  jsonify([e.serialize() for e in holiday])
     except Exception as e:
         return(str(e))
 
