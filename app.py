@@ -71,7 +71,7 @@ def add_book_form():
 
 @app.route("/addnew")
 def add_holiday():
-    #holiday added
+   
     month=request.args.get('month')
     date=request.args.get('date')
     event=request.args.get('event')
@@ -81,7 +81,7 @@ def add_holiday():
             date=date,
             event=event
         )
-        db.session.add(book)
+        db.session.add(holiday)
         db.session.commit()
         return "Holiday added. holiday id={}".format(holiday.id)
     except Exception as e:
