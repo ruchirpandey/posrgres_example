@@ -5,7 +5,7 @@ This is a Flask+PostgreSQL example web application for deplying on Heroku.,
 This appliation can add and retrieve book details 
 Deployed project is,
   https://books-example.herokuapp.com/
-  
+
 ## Get all data
 https://books-example.herokuapp.com/getall
   
@@ -28,8 +28,8 @@ https://books-example.herokuapp.com/getholidays
 https://books-example.herokuapp.com/get/1
    
 ## Add a holiday
-(for month=Twilight, date=Stephenie Meyer, event=2006)  
-[https://books-example.herokuapp.com/addnew?month=Twilight&date=Stephenie Meyer&event=2006](https://books-example.herokuapp.com/addnew?month=Twilight&date=Stephenie%20Meyer&event=2006)
+(for month=january, date=22, event=2006)  
+[https://books-example.herokuapp.com/addnew?month=january&date=22&event=hfrj](https://books-example.herokuapp.com/addnew?month=january&date=22&event=hfrj)
    
 ## Add through html form
 https://books-example.herokuapp.com/add/holiday
