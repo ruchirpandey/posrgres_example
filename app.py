@@ -87,6 +87,23 @@ def add_holiday():
     except Exception as e:
         return(str(e))
 
+@app.route("/getholidays")
+def get_holidays():
+    try:
+        holidays=Holiday.query.all()
+        return  jsonify([e.serialize() for e in holidays])
+    except Exception as e:
+        return(str(e))
+
+@app.route("/get/<month_>")
+def get_by_month(month_):
+    try:
+        holiday=Holiday.query.filter_by(month=month_).first()
+        return jsonify(holiday.serialize())
+    except Exception as e:
+        return(str(e))
+
+
 
 if __name__ == '__main__':
     app.run()
