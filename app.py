@@ -90,8 +90,8 @@ def add_holiday():
 @app.route("/getholidays")
 def get_holidays():
     try:
-        holiday=Holiday.query.all()
-        return  jsonify([e.serialize() for e in holiday])
+        holidays=Holiday.query.all()
+        return  jsonify([e.serialize() for e in holidays])
     except Exception as e:
         return(str(e))
 
@@ -119,6 +119,7 @@ def add_holiday_form():
             db.session.commit()
             return "Holiday added. holiday id={}".format(holiday.id)
         except Exception as e:
+            return "hello"
             return(str(e))
     return render_template("getdata.html")
 
