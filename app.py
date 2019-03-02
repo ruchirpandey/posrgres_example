@@ -103,6 +103,25 @@ def get_by_month(month_):
     except Exception as e:
         return(str(e))
 
+@app.route("/add/holiday",methods=['GET', 'POST'])
+def add_holiday_form():
+    if request.method == 'POST':
+        month=request.form.get('month')
+        date=request.form.get('date')
+        event=request.form.get('event')
+        try:
+            holiday=Holiday(
+                month=month,
+                date=date,
+                event=event
+            )
+            db.session.add(holiday)
+            db.session.commit()
+            return "Holiday added. holiday id={}".format(holiday.id)
+        except Exception as e:
+            return(str(e))
+    return render_template("getdata.html")
+
 
 
 if __name__ == '__main__':
