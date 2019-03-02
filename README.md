@@ -19,3 +19,17 @@ https://books-example.herokuapp.com/get/1
    
 ## Add through html form
 https://books-example.herokuapp.com/add/form
+
+## Get all data
+https://books-example.herokuapp.com/getholidays
+  
+## Get by id 
+(for id=1)  
+https://books-example.herokuapp.com/get/1
+   
+## Add a book
+(for month=Twilight, date=Stephenie Meyer, event=2006)  
+[https://books-example.herokuapp.com/addnew?month=Twilight&date=Stephenie Meyer&event=2006](https://books-example.herokuapp.com/addnew?month=Twilight&date=Stephenie%20Meyer&event=2006)
+   
+## Add through html form
+https://books-example.herokuapp.com/add/holiday
