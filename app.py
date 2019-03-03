@@ -11,6 +11,8 @@ db = SQLAlchemy(app)
 
 from models import Book
 
+from models import Holiday
+
 @app.route("/")
 def hello():
     return "Hello !"
