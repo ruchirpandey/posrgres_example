@@ -8,7 +8,7 @@ class Holiday(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     month = db.Column(db.String())
-    date = db.Column(db.Integer)
+    date = db.Column(db.String())
     event = db.Column(db.String())
 
     def __init__(self, month, date, event):
