@@ -4,14 +4,14 @@ class Book(db.Model):
     __tablename__ = 'books'
 
     id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String())
-    author = db.Column(db.String())
-    published = db.Column(db.String())
+    month = db.Column(db.String())
+    date = db.Column(db.String())
+    event = db.Column(db.String())
 
     def __init__(self, name, author, published):
-        self.name = name
-        self.author = author
-        self.published = published
+        self.month = month
+        self.date = date
+        self.event = event
 
     def __repr__(self):
         return '<id {}>'.format(self.id)
@@ -19,7 +19,7 @@ class Book(db.Model):
     def serialize(self):
         return {
             'id': self.id, 
-            'name': self.name,
-            'author': self.author,
-            'published':self.published
+            'month': self.month,
+            'date': self.date,
+            'event':self.event
         }

@@ -14,8 +14,8 @@ https://books-example.herokuapp.com/getall
 https://books-example.herokuapp.com/get/1
    
 ## Add a book
-(for name=Twilight, author=Stephenie Meyer, published=2006)  
-[https://books-example.herokuapp.com/add?name=Twilight&author=Stephenie Meyer&published=2006](https://books-example.herokuapp.com/add?name=Twilight&author=Stephenie%20Meyer&published=2006)
+(for month=january, date=26, event=republicday)  
+[https://books-example.herokuapp.com/add?month=january&date=26&event=republicday](https://books-example.herokuapp.com/add?month=january&date=26&event=republicday)
    
 ## Add through html form
 https://books-example.herokuapp.com/add/form
