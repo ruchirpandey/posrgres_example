@@ -13,7 +13,7 @@ from models import Book
 
 @app.route("/")
 def hello():
-    return "Hello World!"
+    return "Hello !"
 
 @app.route("/add")
 def add_book():
