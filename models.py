@@ -8,7 +8,7 @@ class Book(db.Model):
     date = db.Column(db.String())
     event = db.Column(db.String())
 
-    def __init__(self, name, author, published):
+    def __init__(self, month, date, event):
         self.month = month
         self.date = date
         self.event = event
