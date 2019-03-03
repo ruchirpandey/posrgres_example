@@ -11,22 +11,22 @@ db = SQLAlchemy(app)
 
 from models import Book
 
-from models import Holiday
+#from models import Holiday
 
 @app.route("/")
 def hello():
     return "Hello !"
 
 @app.route("/add")
-def add_book():
-    name=request.args.get('name')
-    author=request.args.get('author')
-    published=request.args.get('published')
+def add_holiday():
+    month=request.args.get('month')
+    date=request.args.get('date')
+    event=request.args.get('event')
     try:
         book=Book(
-            name=name,
-            author=author,
-            published=published
+            month=month,
+            date=date,
+            event=event
         )
         db.session.add(book)
         db.session.commit()
@@ -43,9 +43,9 @@ def get_all():
 	    return(str(e))
 
 @app.route("/get/<id_>")
-def get_by_id(id_):
+def get_by_id(month_):
     try:
-        book=Book.query.filter_by(id=id_).first()
+        book=Book.query.filter_by(month=month_).first()
         return jsonify(book.serialize())
     except Exception as e:
 	    return(str(e))
@@ -53,14 +53,14 @@ def get_by_id(id_):
 @app.route("/add/form",methods=['GET', 'POST'])
 def add_book_form():
     if request.method == 'POST':
-        name=request.form.get('name')
-        author=request.form.get('author')
-        published=request.form.get('published')
+        month=request.form.get('month')
+        date=request.form.get('date')
+        event=request.form.get('event')
         try:
             book=Book(
-                name=name,
-                author=author,
-                published=published
+                month=month,
+                date=date,
+                event=event
             )
             db.session.add(book)
             db.session.commit()
