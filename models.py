@@ -4,9 +4,7 @@ from app import db
 class Holiday(db.Model):
     __tablename__ = 'holidays'
 
-    __bind_key__ = 'holidays'
-
-    #this is example
+   
 
     id = db.Column(db.Integer, primary_key=True)
     month = db.Column(db.String())
@@ -32,7 +30,7 @@ class Holiday(db.Model):
 class Book(db.Model):
     __tablename__ = 'books'
 
-     __bind_key__ = 'books'
+
 
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String())
