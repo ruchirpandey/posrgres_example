@@ -11,7 +11,7 @@ db = SQLAlchemy(app)
 
 
 from models import Holiday
-#from models import Book
+from models import Book
 
 
 @app.route("/")
