@@ -120,7 +120,6 @@ def add_holiday_form():
             db.session.commit()
             return "Holiday added. holiday id={}".format(holiday.id)
         except Exception as e:
-            return "hello"
             return(str(e))
     return render_template("getdata.html")
 
