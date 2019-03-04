@@ -38,6 +38,8 @@ def add_holiday():
 def get_all():
     try:
         books=Book.query.all()
+        return render_template("list.html",rows = rows)
+
         return  jsonify([e.serialize() for e in books])
     except Exception as e:
 	    return(str(e))
