@@ -37,10 +37,10 @@ def add_holiday():
 @app.route("/getall")
 def get_all():
     try:
-        books=Book.query.all()
-        return render_template("list.html",books = books)
+        holidays=Book.query.all()
+        return render_template("list.html",holidays = holidays)
 
-        return  jsonify([e.serialize() for e in books])
+        #return  jsonify([e.serialize() for e in books])
     except Exception as e:
 	    return(str(e))
 
