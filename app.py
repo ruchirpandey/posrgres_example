@@ -52,10 +52,8 @@ def get_by_id(month_):
         print("in comin grequest",req)
         action = req['queryResult']['parameters']['Holiday']
         month = req['queryResult']['parameters']['Months']
-        response =  """
-                Response : {0}
-                """.format('Hello Manishaaaaaaaaaa - You inquired Holidays with out Month parameter')
-        return jsonify(book.serialize())
+        response = jsonify(book.serialize())
+    
         reply = {"fulfillmentText": response,}
         if month != '':
 
