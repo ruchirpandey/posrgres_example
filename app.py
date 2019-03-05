@@ -9,7 +9,7 @@ app.config.from_object(os.environ['APP_SETTINGS'])
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
-from models import Holiday
+from models import Book
 
 #from models import Holiday
 
@@ -23,7 +23,7 @@ def add_holiday():
     date=request.args.get('date')
     event=request.args.get('event')
     try:
-        book=Holiday(
+        book=Book(
             month=month,
             date=date,
             event=event
@@ -37,7 +37,7 @@ def add_holiday():
 @app.route("/getall")
 def get_all():
     try:
-        holidays=Holiday.query.all()
+        holidays=Book.query.all()
         return render_template("list.html",holidays = holidays)
 
         #return  jsonify([e.serialize() for e in books])
@@ -47,7 +47,7 @@ def get_all():
 @app.route("/get/<month_>")
 def get_by_id(month_):
     try:
-        book=Holiday.query.filter_by(month=month_).first()
+        book=Book.query.filter_by(month=month_).first()
         return jsonify(book.serialize())
     except Exception as e:
 	    return(str(e))
@@ -59,7 +59,7 @@ def add_book_form():
         date=request.form.get('date')
         event=request.form.get('event')
         try:
-            book=Holiday(
+            book=Book(
                 month=month,
                 date=date,
                 event=event
