@@ -48,25 +48,9 @@ def get_all():
 def get_by_id(month_):
     try:
         book=Book.query.filter_by(month=month_).first()
-        req = request.get_json(silent=True, force=True)
-        print("in comin grequest",req)
-        action = req['queryResult']['parameters']['Holiday']
-        month = req['queryResult']['parameters']['Months']
-        response = """
-                Response : jsonify(book.serialize())
-                """.format('Hello Manishaaaaaaaaaa - You inquired Holidays with out Month parameter')
-        #return jsonify(book.serialize())
-        reply = {"fulfillmentText": response,}
-        if month != '':
-
-            response =  """
-                Response : {0}
-                """.format('Hello Kirtiiiiiiiiiiiii You inquired Holidays with Month parameter')
-            reply = {
-            "fulfillmentText": response,
-        }
         
         
+        return jsonify(book.serialize())
     except Exception as e:
 	    return(str(e))
 
