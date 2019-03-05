@@ -47,7 +47,7 @@ def get_all():
 @app.route("/get/<month_>")
 def get_by_id(month_):
     try:
-        holidays=Book.query.filter_by(month=month_).first()
+        book=Book.query.filter_by(month=month_).first()
         
         return jsonify(book.serialize())
     except Exception as e:
