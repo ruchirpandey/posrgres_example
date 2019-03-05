@@ -44,10 +44,10 @@ def get_all():
     except Exception as e:
 	    return(str(e))
 
-@app.route("/get/<id_>")
-def get_by_id(id_):
+@app.route("/get/<month_>")
+def get_by_id(month_):
     try:
-        book=Book.query.filter_by(id=id_).first()
+        book=Book.query.filter_by(month=month_).first()
         return jsonify(book.serialize())
     except Exception as e:
 	    return(str(e))
