@@ -48,7 +48,7 @@ def get_all():
 def get_by_id(month_):
     try:
         holidays=Book.query.filter_by(month=month_).first()
-        return render_template("list.html",holidays = holidays)
+        
         return jsonify(book.serialize())
     except Exception as e:
 	    return(str(e))
