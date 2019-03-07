@@ -53,13 +53,9 @@ def get_by_id(month_):
     try:
         book=Book.query.filter_by(month=month_).first()
         print("print rows", book)
-        i = 0
-        for row in book:
-            i = i +1 
-            print('-- ',i,'-', row[0],'-',row[1],'-',row[2])
         response =  """
                 Response : {0}
-                """.format(book)
+                """.format(book.serialize())
         reply = {"fulfillmentText": response,}
         return jsonify(reply)
         #return jsonify(book.serialize())
