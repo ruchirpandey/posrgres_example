@@ -62,8 +62,9 @@ def get_by_id(month_):
                 """.format(book)
         reply = {"fulfillmentText": response,}
         return jsonify(reply)
-        return jsonify(book.serialize())
+        #return jsonify(book.serialize())
     except Exception as e:
+        print "hy"
 	    return(str(e))
 
 @app.route("/add/form",methods=['GET', 'POST'])
