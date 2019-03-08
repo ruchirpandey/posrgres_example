@@ -9,7 +9,7 @@ app.config.from_object(os.environ['APP_SETTINGS'])
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
-from models import Book
+from models import Holiday
 
 #from models import Holiday
 
@@ -23,7 +23,7 @@ def add_holiday():
     date=request.args.get('date')
     event=request.args.get('event')
     try:
-        holiday=Book(
+        holiday=Holiday(
             month=month,
             date=date,
             event=event
@@ -33,26 +33,11 @@ def add_holiday():
         return "Holiday added. holiday id={}".format(holiday.id)
     except Exception as e:
 	    return(str(e))
-@app.route("/add1")
-def add_holiday1():
-    month=request.args.get('month')
-    date=request.args.get('date')
-    event=request.args.get('event')
-    try:
-        holiday=Book(
-            month=month,
-            date=date,
-            event=event
-        )
-        db.session.add(book)
-        db.session.commit()
-        return "Holiday added. holiday id={}".format(holiday.id)
-    except Exception as e:
-        return(str(e))
+        
 @app.route("/getall")
 def get_all():
     try:
-        holidays=Book.query.all()
+        holidays=Holiday.query.all()
         return render_template("list.html",holidays = holidays)
 
         return  jsonify([e.serialize() for e in books])
@@ -66,7 +51,7 @@ def get_by_id(month_):
     #action = req['queryResult']['parameters']['Holiday']
     #month = req['queryResult']['parameters']['Months']
     try:
-        holiday=Book.query.filter_by(month=month_).first()
+        holiday=Holiday.query.filter_by(month=month_).first()
         print("print rows", holiday)
         
         return jsonify(holiday.serialize())
@@ -80,7 +65,7 @@ def add_book_form():
         date=request.form.get('date')
         event=request.form.get('event')
         try:
-            holiday=Book(
+            holiday=Holiday(
                 month=month,
                 date=date,
                 event=event
