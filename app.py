@@ -34,7 +34,7 @@ def add_holiday():
     except Exception as e:
 	    return(str(e))
 @app.route("/add1")
-def add_holiday1):
+def add_holiday1():
     month=request.args.get('month')
     date=request.args.get('date')
     event=request.args.get('event')
