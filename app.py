@@ -52,7 +52,7 @@ def get_by_id(month_):
     #month = req['queryResult']['parameters']['Months']
     try:
         holiday=Book.query.filter_by(month=month_).first()
-        #print("print rows", holiday)
+        print("print rows", holiday)
         
         return jsonify(holiday.serialize())
     except Exception as e:
