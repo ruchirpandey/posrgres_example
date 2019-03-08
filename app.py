@@ -33,7 +33,22 @@ def add_holiday():
         return "Holiday added. holiday id={}".format(holiday.id)
     except Exception as e:
 	    return(str(e))
-
+@app.route("/add1")
+def add_holiday1):
+    month=request.args.get('month')
+    date=request.args.get('date')
+    event=request.args.get('event')
+    try:
+        holiday=Book(
+            month=month,
+            date=date,
+            event=event
+        )
+        db.session.add(book)
+        db.session.commit()
+        return "Holiday added. holiday id={}".format(holiday.id)
+    except Exception as e:
+        return(str(e))
 @app.route("/getall")
 def get_all():
     try:
