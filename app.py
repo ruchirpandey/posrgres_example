@@ -46,19 +46,15 @@ def get_all():
 
 @app.route("/get/<month_>" )
 def get_by_id(month_):
-    req = request.get_json(silent=True, force=True)
-    print("in comin grequest",req)
-    action = req['queryResult']['parameters']['Holiday']
-    month = req['queryResult']['parameters']['Months']
+    #req = request.get_json(silent=True, force=True)
+    #print("in comin grequest",req)
+    #action = req['queryResult']['parameters']['Holiday']
+    #month = req['queryResult']['parameters']['Months']
     try:
         holiday=Book.query.filter_by(month=month_).first()
-        print("print rows", holiday)
-        response =  """
-                Response : {0}
-                """.format(holiday.serialize())
-        reply = {"fulfillmentText": response,}
-        return jsonify(reply)
-        #return jsonify(book.serialize())
+        #print("print rows", holiday)
+        
+        return jsonify(book.serialize())
     except Exception as e:
 	    return(str(e))
 
