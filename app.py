@@ -51,11 +51,11 @@ def get_by_id(month_):
     action = req['queryResult']['parameters']['Holiday']
     month = req['queryResult']['parameters']['Months']
     try:
-        book=Book.query.filter_by(month=month_).first()
-        print("print rows", book)
+        holiday=Book.query.filter_by(month=month_).first()
+        print("print rows", holiday)
         response =  """
                 Response : {0}
-                """.format(book.serialize())
+                """.format(holiday.serialize())
         reply = {"fulfillmentText": response,}
         return jsonify(reply)
         #return jsonify(book.serialize())
