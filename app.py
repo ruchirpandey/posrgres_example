@@ -23,14 +23,14 @@ def add_holiday():
     date=request.args.get('date')
     event=request.args.get('event')
     try:
-        book=Book(
+        holiday=Book(
             month=month,
             date=date,
             event=event
         )
         db.session.add(book)
         db.session.commit()
-        return "Book added. book id={}".format(book.id)
+        return "Holiday added. holiday id={}".format(holiday.id)
     except Exception as e:
 	    return(str(e))
 
@@ -65,14 +65,14 @@ def add_book_form():
         date=request.form.get('date')
         event=request.form.get('event')
         try:
-            book=Book(
+            holiday=Book(
                 month=month,
                 date=date,
                 event=event
             )
-            db.session.add(book)
+            db.session.add(holiday)
             db.session.commit()
-            return "Book added. book id={}".format(book.id)
+            return "Holiday added. holiday id={}".format(holiday.id)
         except Exception as e:
             return(str(e))
     return render_template("getdata.html")
