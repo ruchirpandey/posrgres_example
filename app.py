@@ -116,7 +116,7 @@ def get_by_name(name_):
     try:
         table=Holiday.query.filter_by(name=name_).first()
         print("print rows", table)
-        
+        return (table)
         return jsonify(table.serialize())
     except Exception as e:
         return(str(e))
