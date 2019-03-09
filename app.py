@@ -77,5 +77,38 @@ def add_book_form():
             return(str(e))
     return render_template("getdata.html")
 
+@app.route("/add/form2",methods=['GET', 'POST'])
+def add_book_form():
+    if request.method == 'POST':
+        name=request.form.get('name')
+        address=request.form.get('address')
+        city=request.form.get('event')
+        try:
+            table=Holiday(
+                name=name,
+                address=address,
+                city=city
+            )
+            db.session.add(holiday)
+            db.session.commit()
+            return "Info added. info id={}".format(table.id)
+        except Exception as e:
+            return(str(e))
+    return render_template("studentdata.html")
+
+@app.route("/get/<name_>" )
+def get_by_id(name_):
+    #req = request.get_json(silent=True, force=True)
+    #print("in comin grequest",req)
+    #action = req['queryResult']['parameters']['Holiday']
+    #month = req['queryResult']['parameters']['Months']
+    try:
+        table=Holiday.query.filter_by(name=name_).first()
+        print("print rows", table)
+        
+        return jsonify(table.serialize())
+    except Exception as e:
+        return(str(e))
+
 if __name__ == '__main__':
     app.run()
