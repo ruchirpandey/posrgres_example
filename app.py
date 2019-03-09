@@ -96,6 +96,17 @@ def add_info():
             return(str(e))
     return render_template("studentdata.html")
 
+@app.route("/getdata")
+def get_data():
+    try:
+        table=Holiday.query.all()
+        return render_template("table.html",table = table)
+
+        #return  jsonify([e.serialize() for e in books])
+    except Exception as e:
+        return(str(e))
+
+
 @app.route("/get/<name_>" )
 def get_by_name(name_):
     #req = request.get_json(silent=True, force=True)
@@ -109,6 +120,8 @@ def get_by_name(name_):
         return jsonify(table.serialize())
     except Exception as e:
         return(str(e))
+
+
 
 if __name__ == '__main__':
     app.run()
