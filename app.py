@@ -78,7 +78,7 @@ def add_book_form():
     return render_template("getdata.html")
 
 @app.route("/add/form2",methods=['GET', 'POST'])
-def add_book_form():
+def add_info():
     if request.method == 'POST':
         name=request.form.get('name')
         address=request.form.get('address')
@@ -97,7 +97,7 @@ def add_book_form():
     return render_template("studentdata.html")
 
 @app.route("/get/<name_>" )
-def get_by_id(name_):
+def get_by_name(name_):
     #req = request.get_json(silent=True, force=True)
     #print("in comin grequest",req)
     #action = req['queryResult']['parameters']['Holiday']
