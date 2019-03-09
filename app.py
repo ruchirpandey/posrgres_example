@@ -89,7 +89,7 @@ def add_info():
                 address=address,
                 city=city
             )
-            db.session.add(holiday)
+            db.session.add(table)
             db.session.commit()
             return "Info added. info id={}".format(table.id)
         except Exception as e:
