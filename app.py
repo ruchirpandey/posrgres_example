@@ -39,8 +39,6 @@ def get_all():
     try:
         
         holidays=Holiday.query.all()
-       
-        
         return render_template("list.html",holidays = holidays)
 
         return  jsonify([e.serialize() for e in books])
