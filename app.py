@@ -37,20 +37,9 @@ def add_holiday():
 @app.route("/getall")
 def get_all():
     try:
-        req = request.get_json(silent=True, force=True)
-        print("in comin grequest",req)
-        action = req['queryResult']['parameters']['Holiday']
-        month = req['queryResult']['parameters']['Months']
+        
         holidays=Holiday.query.all()
-        i = 0
-        for row in holidays:
-            i = i +1 
-            print('-- ',i,'-', row[0],'-',row[1],'-',row[2])
-        response =  """
-                Response : {0}
-                """.format(holidays)
-        reply = {"fulfillmentText": response,}
-        return jsonify(reply)
+       
         
         return render_template("list.html",holidays = holidays)
 
