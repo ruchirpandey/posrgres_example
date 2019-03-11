@@ -104,20 +104,6 @@ def get_data():
         return(str(e))
 
 
-@app.route("/search/<name_>" )
-def search(name_):
-    #req = request.get_json(silent=True, force=True)
-    #print("in comin grequest",req)
-    #action = req['queryResult']['parameters']['Holiday']
-    #month = req['queryResult']['parameters']['Months']
-    try:
-        table=Holiday.query.filter_by(name=name_).first()
-        print("print rows", table)
-        return (table)
-        #return jsonify(table.serialize())
-    except Exception as e:
-        return(str(e))
-
 
 
 if __name__ == '__main__':
