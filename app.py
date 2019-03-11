@@ -105,7 +105,7 @@ def get_data():
 
 
 @app.route("/search/<name_>" )
-def get_by_name(name_):
+def search(name_):
     #req = request.get_json(silent=True, force=True)
     #print("in comin grequest",req)
     #action = req['queryResult']['parameters']['Holiday']
