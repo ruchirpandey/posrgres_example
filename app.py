@@ -56,10 +56,7 @@ def get_by_id(month_):
         holiday=Holiday.query.filter_by(month=month_).first()
         print("print rows", holiday)
     
-        response =  """
-                Response : {0}
-                """.format(holiday)
-        reply = {"fulfillmentText": response,}
+        reply = {"fulfillmentText": holiday,}
         return jsonify(reply)
         return jsonify(holiday.serialize())
     except Exception as e:
