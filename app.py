@@ -47,10 +47,23 @@ def get_all():
 
 @app.route("/get/<month_>" )
 def get_by_id(month_):
+
+    req = request.get_json(silent=True, force=True)
+    action = req['queryResult']['parameters']['Holiday']
+    month = req['queryResult']['parameters']['Months']
     
     try:
         holiday=Holiday.query.filter_by(month=month_).first()
         print("print rows", holiday)
+        i = 0
+        for row in rows:
+            i = i +1 
+            print('-- ',i,'-', row[0],'-',row[1],'-',row[2])
+        response =  """
+                Response : {0}
+                """.format(rows)
+        reply = {"fulfillmentText": response,}
+        return jsonify(reply)
         return jsonify(holiday.serialize())
     except Exception as e:
 	    return(str(e))
