@@ -74,41 +74,24 @@ def add_book_form():
             return(str(e))
     return render_template("getdata.html")
 
-@app.route("/add/studentinfo",methods=['GET', 'POST']
+@app.route("/add/studentinfo",methods=['GET', 'POST'])
 def add_student_info():
-
     if request.method == 'POST':
-
         name=request.form.get('name')
-
         address=request.form.get('address')
-
         city=request.form.get('city')
-
         try:
-
             table=Student_Info(
-
                 name=name,
-
                 address=address,
-
                 city=city
-
             )
-
             db.session.add(table)
-
             db.session.commit()
-
             return "Info added. info id={}".format(table.id)
-
         except Exception as e:
-
             return(str(e))
-
     return render_template("studentdata.html")
-
 
 
 @app.route("/getdata")
