@@ -74,6 +74,7 @@ def add_book_form():
             return(str(e))
     return render_template("getdata.html")
 
+@app.route("/add/studentinfo",methods=['GET', 'POST']
 def add_student_info():
 
     if request.method == 'POST':
