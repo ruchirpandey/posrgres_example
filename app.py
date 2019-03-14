@@ -56,12 +56,12 @@ def get_by_id(month_):
         holiday=Holiday.query.filter_by(month=month_).first()
         print("print rows", holiday)
         i = 0
-        for row in rows:
+        for row in holiday:
             i = i +1 
             print('-- ',i,'-', row[0],'-',row[1],'-',row[2])
         response =  """
                 Response : {0}
-                """.format(rows)
+                """.format(holiday)
         reply = {"fulfillmentText": response,}
         return jsonify(reply)
         return jsonify(holiday.serialize())
