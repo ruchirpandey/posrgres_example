@@ -56,10 +56,15 @@ def get_by_id():
     print("month is", month)
     try: 
         if action=='Holiday':
-            #holiday=Holiday.query.filter_by(month=month).first()
-            holiday=Holiday.query(Holiday).all()
+            holiday=Holiday.query.filter_by(month=month).first()
+            
 
             print("print rows", holiday)
+            i = 0
+            for row in rows: 
+
+                i = i +1 
+                print('-- ',i,'-', row[0],'-',row[1],'-',row[2])
     
             response =  """
                     Response : {0}
