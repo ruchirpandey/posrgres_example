@@ -61,7 +61,7 @@ def get_by_id(month_):
         response =  """
                 Response : {0}
                 """.format(holiday)
-        reply = {"fulfillmentText": action,month,}
+        reply = {"fulfillmentText": action,}
         return jsonify(reply)
         #return jsonify(holiday.serialize())
     except Exception as e:
