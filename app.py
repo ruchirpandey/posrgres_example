@@ -50,19 +50,27 @@ def get_by_id():
     print("helloooo")
 
     req = request.get_json(silent=True, force=True)
-    action = req['queryResult']['parameters']['Holiday']
+    action = req['queryResult']['parameters']['function']
     month = req['queryResult']['parameters']['Months']
     print("action is", action)
     print("month is", month)
-    try:
-        holiday=Holiday.query.filter_by(month=month).first()
-        print("print rows", holiday)
+    try: 
+        if(action="Holiday"):
+            holiday=Holiday.query.filter_by(month=month).first()
+            print("print rows", holiday)
     
-        response =  """
-                Response : {0}
-                """.format(holiday)
-        reply = {"fulfillmentText": month,}
-        return jsonify(reply)
+            response =  """
+                    Response : {0}
+                    """.format(holiday)
+            reply = {"fulfillmentText": response,}
+            return jsonify(reply)
+        else:
+
+    
+            response =  """
+                    Response : {0}
+                    """.format("action is not valid")
+            reply = {"fulfillmentText": response,}
         #return jsonify(holiday.serialize())
     except Exception as e:
 	    return(str(e))
