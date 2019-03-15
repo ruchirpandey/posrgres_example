@@ -47,6 +47,7 @@ def get_all():
 
 @app.route("/get/<month_>",methods=['GET', 'POST'] )
 def get_by_id(month_):
+    print("helloooo")
 
     req = request.get_json(silent=True, force=True)
     action = req['queryResult']['parameters']['Holiday']
