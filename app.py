@@ -61,7 +61,7 @@ def get_by_id():
 
             print("print rows", holiday)
             i = 0
-            for row in rows: 
+            for row in holiday: 
 
                 i = i +1 
                 print('-- ',i,'-', row[0],'-',row[1],'-',row[2])
