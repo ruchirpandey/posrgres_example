@@ -45,8 +45,8 @@ def get_all():
     except Exception as e:
 	    return(str(e))
 
-@app.route("/get/<month_>",methods=['GET', 'POST'] )
-def get_by_id(month_):
+@app.route("/get",methods=['GET', 'POST'] )
+def get_by_id():
     print("helloooo")
 
     req = request.get_json(silent=True, force=True)
