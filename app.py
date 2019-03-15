@@ -55,7 +55,7 @@ def get_by_id():
     print("action is", action)
     print("month is", month)
     try: 
-        if(action==Holiday):
+        if(action=Holiday):
             holiday=Holiday.query.filter_by(month=month).first()
             print("print rows", holiday)
     
