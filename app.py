@@ -60,12 +60,12 @@ def get_by_id():
             
 
             print("print rows", holiday)
-            for row in holiday:
             
+            -
 
-                print("Month is",row.month)
-                print("Date is",row.date)
-                print("Event is",row.event)
+            print("Month is",holiday.month)
+            print("Date is",holiday.date)
+            print("Event is",holiday.event)
 
 
     
