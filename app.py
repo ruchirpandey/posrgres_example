@@ -57,7 +57,7 @@ def get_by_id():
     try: 
         if action=='Holiday':
             #holiday=Holiday.query.filter_by(month=month).first()
-            holiday=Holiday.query.filter_by(Holiday).all()
+            holiday=Holiday.query(Holiday).all()
 
             print("print rows", holiday)
     
