@@ -70,10 +70,10 @@ def get_by_id():
 
     
             response =  """
-                    id : {0}
-                    month: {1}
-                    date: {2}
-                    event: {3}
+                 
+                    month: {0}
+                    date: {1}
+                    event: {4}
                     
                     """.format("Dear student, there is one holiday in",holiday.month,"on ",holiday.date,"for the occasion of",holiday.event)
             reply = {"fulfillmentText": response,}
