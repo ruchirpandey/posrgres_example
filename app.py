@@ -51,7 +51,8 @@ def get_by_id(month_):
     req = request.get_json(silent=True, force=True)
     action = req['queryResult']['parameters']['Holiday']
     month = req['queryResult']['parameters']['Months']
-    
+    print("action is", action)
+    print("month is", month)
     try:
         holiday=Holiday.query.filter_by(month=month_).first()
         print("print rows", holiday)
