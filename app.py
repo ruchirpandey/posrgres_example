@@ -70,7 +70,7 @@ def get_by_id():
             for row in holiday:
 
                 i = i + 1
-                print("print row", row.id, row.month, row.date, row.event)
+                print("print row", row.id, row.date, row.event)
                 Result=str(row.id)+str(row.month)+str(row.date)+str(row.event)
            # Result= 'Dear candidate there is one holiday in the month of {0}'.format(holiday.month)
 
