@@ -75,7 +75,7 @@ def get_by_id():
                     date: {2}
                     event: {3}
                     
-                    """.format(holiday.id+ holiday.month+holiday.date +holiday.event)
+                    """.format(holiday.id, holiday.month+holiday.date +holiday.event)
             reply = {"fulfillmentText": response,}
             return jsonify(reply)
         else:
