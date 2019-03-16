@@ -69,9 +69,7 @@ def get_by_id():
                         {0}
                     
                         """.format("There is no holiday")
-                
-                reply = {"fulfillmentText": response,}
-
+                 reply = {"fulfillmentText": response,}
             return jsonify(reply)
             i = 0
             Result=''
