@@ -67,7 +67,7 @@ def get_by_id():
             for row in holiday:
 
                 i = i + 1
-                print("print rows", row.id, row.date, row.event)
+                print("print rows", row.id, row.month, row.date, row.event)
                 Result=Result + str(row.id) +''+ str(row.month) + ''+str(row.date) + ''+str(row.event)
            # Result= 'Dear candidate there is one holiday in the month of {0}'.format(holiday.month)
 
@@ -77,7 +77,7 @@ def get_by_id():
                         Response : {0}
                     
                         """.format(Result,)
-                response=response + 1
+                response=response + Result
                 reply = {"fulfillmentText": response,}
 
             return jsonify(reply)
