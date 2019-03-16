@@ -57,20 +57,16 @@ def get_by_id():
     try: 
         if action=='Holiday':
             holiday=Holiday.query.filter_by(month=month).all()
-            
-
            
-            
-            
 
-            print("Month is",holiday.month)
-            print("Date is",holiday.date)
-            print("Event is",holiday.event)
+            #print("Month is",row.month)
+            #print("Date is",holiday.date)
+            #print("Event is",holiday.event)
             i = 0
             for row in holiday:
 
                 i = i + 1
-                print("print row", row.id, row.date, row.event)
+                print("print rows", row.id, row.date, row.event)
                 Result=str(row.id)+str(row.month)+str(row.date)+str(row.event)
            # Result= 'Dear candidate there is one holiday in the month of {0}'.format(holiday.month)
 
