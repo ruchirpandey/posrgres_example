@@ -64,11 +64,11 @@ def get_by_id():
             #print("Date is",holiday.date)
             #print("Event is",holiday.event)
             if(len(holiday)==0):
-                 response = response + """
+                 response =  """
 
                         {0}
                     
-                        """.format("There is no holiday")
+                        """.format("There are no holidays in month of "+ month)
                  reply = {"fulfillmentText": response,}
             return jsonify(reply)
             i = 0
