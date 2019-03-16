@@ -72,11 +72,14 @@ def get_by_id():
            # Result= 'Dear candidate there is one holiday in the month of {0}'.format(holiday.month)
 
                 print("result is", Result)
-            response =  """
-                    Response : {0}
+                response =  """
+
+                        Response : {0}
                     
-                    """.format(Result,)
-            reply = {"fulfillmentText": response,}
+                        """.format(Result,)
+                response=response + 1
+                reply = {"fulfillmentText": response,}
+
             return jsonify(reply)
         else:
 
