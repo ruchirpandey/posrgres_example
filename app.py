@@ -66,7 +66,7 @@ def get_by_id():
             print("Month is",holiday.month)
             print("Date is",holiday.date)
             print("Event is",holiday.event)
-
+            Result=str(holiday.id)+str(holiday.month)+str(holiday.date)+str(holiday.event)
 
     
             response =  """
@@ -75,7 +75,7 @@ def get_by_id():
                     date: {2}
                     event: {3}
                     
-                    """.format(str(holiday.id)+holiday.month+holiday.date+holiday.event)
+                    """.format(Result)
             reply = {"fulfillmentText": response,}
             return jsonify(reply)
         else:
