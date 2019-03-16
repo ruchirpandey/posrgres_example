@@ -73,11 +73,7 @@ def get_by_id():
            # Result= 'Dear candidate there is one holiday in the month of {0}'.format(holiday.month)
 
                 print("result is", Result)
-                response = response + """
-
-                        Response : {0}
-                    
-                        """.format(Result,)
+                response = response + """\n""".format(Result,)
                 
                 reply = {"fulfillmentText": response,}
 
