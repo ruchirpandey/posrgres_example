@@ -74,6 +74,7 @@ def get_by_id():
             i = 0
             Result=''
             response=''
+            reply= ''
             for row in holiday:
 
                 i = i + 1
