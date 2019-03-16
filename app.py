@@ -66,9 +66,7 @@ def get_by_id():
             print("Month is",holiday.month)
             print("Date is",holiday.date)
             print("Event is",holiday.event)
-            Result=str(holiday.id)+str(holiday.month)+str(holiday.date)+str(holiday.event)
-
-    
+            Result=str(holiday.id)+holiday.month+holiday.date+holiday.event   
             response =  """
                     id : {0}
                     month: {1}
