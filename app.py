@@ -63,6 +63,7 @@ def get_by_id():
             #print("Date is",holiday.date)
             #print("Event is",holiday.event)
             i = 0
+            Result=''
             for row in holiday:
 
                 i = i + 1
