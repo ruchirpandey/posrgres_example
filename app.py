@@ -66,7 +66,12 @@ def get_by_id():
             print("Month is",holiday.month)
             print("Date is",holiday.date)
             print("Event is",holiday.event)
-            Result=str(holiday.id)+str(holiday.month)+str(holiday.date)+str(holiday.event)
+            i = 0
+            for row in holiday:
+
+                i = i + 1
+
+                Result=str(holiday.id)+str(holiday.month)+str(holiday.date)+str(holiday.event)
            # Result= 'Dear candidate there is one holiday in the month of {0}'.format(holiday.month)
             print("result is", Result)
             response =  """
