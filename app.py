@@ -201,5 +201,28 @@ def get_by_name(name_):
 
 
 
+@app.route("/add/ex_schedule",methods=['GET', 'POST'])
+def add_exam_schedule():
+    if request.method == 'POST':
+        course=request.form.get('course')
+        semester=request.form.get('semester')
+        date=request.form.get('date')
+        sub_code=request.form.get('sub_code')
+        subject=request.form.get('subject')
+        try:
+            schedule=Schedule(
+                course=course,
+                semester=semester,
+                date=date,
+                sub_code=sub_code,
+                subject=subject
+            )
+            db.session.add(schedule)
+            db.session.commit()
+            return "schedule added. schedule id={}".format(schedule.id)
+        except Exception as e:
+            return(str(e))
+    return render_template("getschedule.html")
+
 if __name__ == '__main__':
     app.run()

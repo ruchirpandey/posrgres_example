@@ -52,6 +52,32 @@ class Student_Info(db.Model):
             'city':self.city
         }
 
+class Schedule(db.Model):
+    __tablename__ = 'exam_schedule'
+
+   
+
+    id = db.Column(db.Integer, primary_key=True)
+    course = db.Column(db.String())
+    semester = db.Column(db.String())
+    date = db.Column(db.String())
+
+    def __init__(self, month, date, event):
+        self.month = month
+        self.date = date
+        self.event = event
+
+    def __repr__(self):
+        return '<id {}>'.format(self.id)
+
+    def serialize(self):
+        return {
+            'id': self.id, 
+            'month': self.month,
+            'date': self.date,
+            'event':self.event
+        }
+
 
 class Book(db.Model):
     __tablename__ = 'books'
