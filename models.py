@@ -53,7 +53,7 @@ class Student_Info(db.Model):
         }
 
 class Schedule(db.Model):
-    __tablename__ = 'exam_schedule'
+    __tablename__ = 'schedule'
 
    
 
@@ -61,11 +61,15 @@ class Schedule(db.Model):
     course = db.Column(db.String())
     semester = db.Column(db.String())
     date = db.Column(db.String())
+    sub_code = db.Column(db.String())
+    subject = db.Column(db.String())
 
-    def __init__(self, month, date, event):
-        self.month = month
+    def __init__(self, course, semester, date, sub_code, subject):
+        self.course = course
+        self.semester = semester
         self.date = date
-        self.event = event
+        self.sub_code = sub_code
+        self.subject = subject
 
     def __repr__(self):
         return '<id {}>'.format(self.id)
@@ -73,9 +77,11 @@ class Schedule(db.Model):
     def serialize(self):
         return {
             'id': self.id, 
-            'month': self.month,
-            'date': self.date,
-            'event':self.event
+            'course': self.course,
+            'semester': self.semester,
+            'date':self.date,
+            'sub_code':self.sub_code,
+            'subject':self.subject
         }
 
 
