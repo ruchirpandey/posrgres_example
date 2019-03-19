@@ -26,20 +26,22 @@
 
                 <label for="course">course</label>
                 <div class="form-row">
-                    <input class="form-control" type="checkbox" type="course" placeholder="course" id="course" name="course" >
-                    <select>
-                    <option>BCA</option>
-                    <option>B.Tech</option>
-                    <option>Polytechnic</option>
-                    <option>MCA</option>
                     
-                     </select>
+                    <input list="course" name="course">
+                    <datalist id="course">
+                    <option value="BCA">
+                    <option value="B.Tech">
+                    <option value="Polytechnic">
+                    <option value="MCA">
+                    
+                    </datalist>
                 </div>
                 <br>
                 <div class="form-row">
                     <label for="semester">semester</label>
-                    <input class="form-control" type="checkbox" type="semester" placeholder="semester" id="semester" name="semester" >
-                    <select>
+                    <input list="semester" name="semester">
+                    <datalist id="semester">
+               
                     <option>I</option>
                     <option>II</option>
                     <option>III</option>
@@ -49,7 +51,7 @@
                     <option>VII</option>
                     <option>VIII</option>
                     
-                     </select>
+                      </datalist>
                 </div>
                 <br>
                 <div class="form-row ">
