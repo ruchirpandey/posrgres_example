@@ -210,14 +210,14 @@ def add_schedule():
         sub_code=request.form.get('sub_code')
         subject=request.form.get('subject')
         try:
-            schedule=Schedule(
+            data=Schedule(
                 course=course,
                 semester=semester,
                 date=date,
                 sub_code=sub_code,
                 subject=subject
             )
-            db.session.add(schedule)
+            db.session.add(data)
             db.session.commit()
             return "schedule added. schedule id={}".format(schedule.id)
         except Exception as e:
