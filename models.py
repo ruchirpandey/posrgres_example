@@ -52,8 +52,8 @@ class Student_Info(db.Model):
             'city':self.city
         }
 
-class Sch(db.Model):
-    __tablename__ = 'exam_schedule'
+class Schedule(db.Model):
+    __tablename__ = 'schedule'
 
    
     id = db.Column(db.Integer, primary_key=True)
