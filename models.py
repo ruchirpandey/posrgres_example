@@ -59,13 +59,15 @@ class Schedule(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     course = db.Column(db.String())
+    branch = db.Column(db.String())
     semester = db.Column(db.String())
     date = db.Column(db.String())
     sub_code = db.Column(db.String())
     subject = db.Column(db.String())
 
-    def __init__(self, course, semester, date, sub_code, subject):
+    def __init__(self, course, branch, semester, date, sub_code, subject):
         self.course = course
+        self.branch = branch
         self.semester = semester
         self.date = date
         self.sub_code = sub_code
@@ -78,6 +80,7 @@ class Schedule(db.Model):
         return {
             'id': self.id, 
             'course': self.course,
+            'branch': self.branch,
             'semester': self.semester,
             'date':self.date,
             'sub_code':self.sub_code,

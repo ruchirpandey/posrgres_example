@@ -208,6 +208,7 @@ def get_by_name(name_):
 def add_schedule():
     if request.method == 'POST':
         course=request.form.get('course')
+        branch=request.form.get('branch')
         semester=request.form.get('semester')
         date=request.form.get('date')
         sub_code=request.form.get('sub_code')
@@ -215,6 +216,7 @@ def add_schedule():
         try:
             data=Schedule(
                 course=course,
+                branch=branch,
                 semester=semester,
                 date=date,
                 sub_code=sub_code,
