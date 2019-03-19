@@ -90,9 +90,9 @@ def get_by_id():
 
                         {0}
                     
-                        """.format(Result,)
+                        """.format(Result,end="")
                 
-                reply = {"fulfillmentText": response,end=""}
+                reply = {"fulfillmentText": response,}
 
             return jsonify(reply)
         else:
