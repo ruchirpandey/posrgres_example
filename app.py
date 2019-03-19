@@ -11,7 +11,7 @@ db = SQLAlchemy(app)
 
 from models import Holiday
 from models import Student_Info
-from models import Schedule
+from models import Sch
 
 #from models import Holiday
 
