@@ -201,8 +201,8 @@ def get_by_name(name_):
     except Exception as e:
 
         return(str(e))
-@app.route("/add/schedule",methods=['GET', 'POST'])
-def add_schedule():
+@app.route("/add/sch",methods=['GET', 'POST'])
+def add_sch():
     if request.method == 'POST':
         course=request.form.get('course')
         branch=request.form.get('branch')
@@ -211,7 +211,7 @@ def add_schedule():
         sub_code=request.form.get('sub_code')
         subject=request.form.get('subject')
         try:
-            data=Schedule(
+            data=Sch(
                 course=course,
                 branch=branch,
                 semester=semester,
@@ -226,11 +226,11 @@ def add_schedule():
             return(str(e))
     return render_template("exam.html")
 
-@app.route("/getschedule")
-def get_schedule():
+@app.route("/getsch")
+def get_sch():
     try:
         
-        schedule=Schedule.query.all()
+        schedule=Sch.query.all()
         return render_template("list.html",schedule = schedule)
 
         return  jsonify([e.serialize() for e in books])
