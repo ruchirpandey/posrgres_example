@@ -201,8 +201,8 @@ def get_by_name(name_):
 
 
 
-@app.route("/add/ex_schedule",methods=['GET', 'POST'])
-def add_exam_schedule():
+@app.route("/add/schedule",methods=['GET', 'POST'])
+def add_schedule():
     if request.method == 'POST':
         course=request.form.get('course')
         semester=request.form.get('semester')
@@ -222,7 +222,19 @@ def add_exam_schedule():
             return "schedule added. schedule id={}".format(schedule.id)
         except Exception as e:
             return(str(e))
-    return render_template("getschedule.html")
+    return render_template("exam.html")
+
+@app.route("/getschedule")
+def get_schedule():
+    try:
+        
+        schedule=Schedule.query.all()
+        return render_template("list.html",schedule = schedule)
+
+        return  jsonify([e.serialize() for e in books])
+    except Exception as e:
+        return(str(e))
+
 
 if __name__ == '__main__':
     app.run()
