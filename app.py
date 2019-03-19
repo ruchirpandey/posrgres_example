@@ -229,7 +229,6 @@ def add_schedule():
             return(str(e))
     return render_template("exam.html")
 
-
 @app.route("/getschedule")
 def get_schedule():
     try:
@@ -240,8 +239,6 @@ def get_schedule():
         return  jsonify([e.serialize() for e in books])
     except Exception as e:
         return(str(e))
-
-
 
 if __name__ == '__main__':
     app.run()
