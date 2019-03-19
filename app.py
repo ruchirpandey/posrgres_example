@@ -236,7 +236,7 @@ def add_schedule():
 def get_schedule():
     try:
         
-        schedule=Sch.query.all()
+        schedule=Schedule.query.all()
         return render_template("list.html",schedule = schedule)
 
         return  jsonify([e.serialize() for e in books])
