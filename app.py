@@ -200,7 +200,10 @@ def get_by_name(name_):
 
     except Exception as e:
 
+
         return(str(e))
+
+
 @app.route("/add/schedule",methods=['GET', 'POST'])
 def add_schedule():
     if request.method == 'POST':
@@ -225,6 +228,7 @@ def add_schedule():
         except Exception as e:
             return(str(e))
     return render_template("exam.html")
+
 
 @app.route("/getschedule")
 def get_schedule():
