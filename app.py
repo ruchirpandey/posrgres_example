@@ -123,6 +123,7 @@ def get_by_id():
 @app.route("/add/form",methods=['GET', 'POST'])
 def add_book_form():
     if request.method == 'POST':
+        month = request.form.get('month')
         start=request.form.get('start')
         end=request.form.get('end')
         event=request.form.get('event')
