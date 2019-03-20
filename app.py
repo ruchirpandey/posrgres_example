@@ -59,15 +59,15 @@ def get_by_id():
     month = req['queryResult']['parameters']['Months']
     print("action is", action)
     print("month is", month)
-    today_month = datetime.today().month
-    print('today_month', today_month)
-    months = Holiday.query.filter_by(extract('month', Holiday.datetime) == datetime.today().month.strftime("%B")).all()
-    print("months is", months)
+    #today_month = datetime.today().month
+    #print('today_month', today_month)
+    #months = Holiday.query.filter_by(extract('month', Holiday.datetime) == datetime.today().month.strftime("%B")).all()
+    #print("months is", months)
 
     #Payment.query.filter(extract('month', Payment.due_date) >= datetime.today().month,)
 
-    start = db.Column(db.DateTime, nullable = False, default = datetime.strftime(datetime.today(), "%b %d %Y"))
-    end = db.Column(db.DateTime, nullable = False, default = datetime.strftime(datetime.today(), "%b %d %Y"))
+    #start = db.Column(db.DateTime, nullable = False, default = datetime.strftime(datetime.today(), "%b %d %Y"))
+    #end = db.Column(db.DateTime, nullable = False, default = datetime.strftime(datetime.today(), "%b %d %Y"))
     try: 
         if action=='Holiday':
             holiday=Holiday.query.filter_by(month == month).all()
@@ -128,6 +128,7 @@ def add_book_form():
         event=request.form.get('event')
         try:
             holiday=Holiday(
+                month=month,
                 start=start,
                 end=end,
                 event=event
