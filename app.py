@@ -72,7 +72,7 @@ def get_by_id():
         if action=='Holiday':
             holiday=Holiday.query.filter_by(month = month).all()
             
-            #holiday_count=Holiday.query.filter_by(month=month).count()
+            holiday_count=Holiday.query.filter_by(month=month).count()
             print("count the holidays",holiday_count, len(holiday))
 
             #print("Month is",row.month)
