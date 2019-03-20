@@ -61,7 +61,7 @@ def get_by_id():
     print("month is", month)
     today_month = datetime.today().month
     print('today_month', today_month)
-    months = Holiday.query.filter_by(extract('month', Holiday.datetime) = datetime.today().month).all()
+    months = Holiday.query.filter_by(extract('month', Holiday.datetime) == datetime.today().month).all()
 
     #Payment.query.filter(extract('month', Payment.due_date) >= datetime.today().month,)
 
