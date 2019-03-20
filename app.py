@@ -59,11 +59,12 @@ def get_by_id():
     print("month is", month)
     today_month = datetime.today().month
     print('today_month', today_month)
+    month = Holiday.query.filter(extract('month') = datetime.today().month )
     start = db.Column(db.DateTime, nullable = False, default = datetime.strftime(datetime.today(), "%b %d %Y"))
     end = db.Column(db.DateTime, nullable = False, default = datetime.strftime(datetime.today(), "%b %d %Y"))
     try: 
         if action=='Holiday':
-            holiday=Holiday.query.filter_by(Holiday.datetime.month == month).all()
+            holiday=Holiday.query.filter_by(month == month).all()
             
             #holiday_count=Holiday.query.filter_by(month=month).count()
             print("count the holidays",holiday_count, len(holiday))
