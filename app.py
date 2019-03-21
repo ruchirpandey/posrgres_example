@@ -134,6 +134,7 @@ def add_book_form():
                 end=end,
                 event=event
             )
+            print("month is",month)
             db.session.add(holiday)
             db.session.commit()
             return "Holiday added. holiday id={}".format(holiday.id)
