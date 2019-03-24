@@ -65,6 +65,8 @@ class Schedule(db.Model):
             'subject':self.subject
         }
 
+
+
 class Student_Info(db.Model):
     __tablename__ = 'stu_info'
 
