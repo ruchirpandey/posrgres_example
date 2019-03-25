@@ -3,6 +3,9 @@ from flask import Flask, request, jsonify, render_template
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 from sqlalchemy import extract
+import calendar
+from sqlalchemy import cast, DATE
+
 
 
 
@@ -66,8 +69,11 @@ def get_by_id():
 
     #Payment.query.filter(extract('month', Payment.due_date) >= datetime.today().month,)
 
-    #start = db.Column(db.DateTime, nullable = False, default = datetime.strftime(datetime.today(), "%b %d %Y"))
-    #end = db.Column(db.DateTime, nullable = False, default = datetime.strftime(datetime.today(), "%b %d %Y"))
+    start = db.Column(db.DateTime, nullable = False, default = datetime.strftime(datetime.today(), "%b %d %Y"))
+    end = db.Column(db.DateTime, nullable = False, default = datetime.strftime(datetime.today(), "%b %d %Y"))
+    a = Holiday.query.filter(cast(Holiday.date_time_field, DATE)==date.today()).all()
+    print("a is",a)
+
     try: 
         if action=='Holiday':
             holiday=Holiday.query.filter_by(month = month).all()
