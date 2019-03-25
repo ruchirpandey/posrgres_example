@@ -71,7 +71,7 @@ def get_by_id():
 
     start = db.Column(db.DateTime, nullable = False, default = datetime.strftime(datetime.today(), "%b %d %Y"))
     end = db.Column(db.DateTime, nullable = False, default = datetime.strftime(datetime.today(), "%b %d %Y"))
-    a = Holiday.query.filter(cast(Holiday.date_time_field, DATE)==date.today()).all()
+    a = Holiday.query.filter(cast(Holiday.start, DATE)==date.today()).all()
     print("a is",a)
 
     try: 
