@@ -69,8 +69,8 @@ def get_by_id():
 
     #Payment.query.filter(extract('month', Payment.due_date) >= datetime.today().month,)
 
-    # start =datetime.strptime(request.vars.Expected_Possession_Date,"%Y-%m-%d").date()
-    # end   =datetime.strptime(request.vars.Expected_Possession_Date,"%Y-%m-%d").date()
+    start =datetime.strptime(request.vars.Expected_Possession_Date,"%Y-%m-%d").date()
+    end   =datetime.strptime(request.vars.Expected_Possession_Date,"%Y-%m-%d").date()
 
     try: 
         if action=='Holiday':
