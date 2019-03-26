@@ -69,8 +69,8 @@ def get_by_id():
 
     #Payment.query.filter(extract('month', Payment.due_date) >= datetime.today().month,)
 
-    #start = db.Column(db.DateTime, nullable = False, default = datetime.strftime(datetime.today(), "%b %d %Y"))
-    #end = db.Column(db.DateTime, nullable = False, default = datetime.strftime(datetime.today(), "%b %d %Y"))
+    start = db.Column(db.DateTime, nullable = False, default = datetime.strftime(datetime.today(), "%b %d %Y"))
+    end = db.Column(db.DateTime, nullable = False, default = datetime.strftime(datetime.today(), "%b %d %Y"))
     a = start
     print("a is",a)
 
