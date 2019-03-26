@@ -8,8 +8,8 @@ class Holiday(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     
-    start = db.Column(db.String())
-    end = db.Column(db.String())
+    start = db.Column(db.date())
+    end = db.Column(db.date())
     event = db.Column(db.String())
 
     def __init__(self, start, end, event):
