@@ -9,15 +9,15 @@ class Holiday(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     
-    start =  db.Column(db.DateTime, nullable=False,default=datetime.utcnow)
+    start_date =  db.Column(db.DateTime, nullable=False,default=datetime.utcnow)
 
     end =db.Column(db.DateTime,default=datetime.utcnow)
 
     event = db.Column(db.String())
 
-    def __init__(self, start, end, event):
+    def __init__(self, start_date, end, event):
         
-        self.start = start
+        self.start_date = start_date
         self.end = end
         self.event = event
 
@@ -28,7 +28,7 @@ class Holiday(db.Model):
         return {
             'id': self.id, 
         
-            'start': self.start,
+            'start_date': self.start_date,
             'end': self.end,
             'event':self.event
         }
