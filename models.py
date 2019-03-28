@@ -2,7 +2,7 @@ from app import db
 from datetime import datetime
 
 
-class Holiday(db.Model):
+lass Holiday(db.Model):
     __tablename__ = 'holidays'
 
    
