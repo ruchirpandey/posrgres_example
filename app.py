@@ -128,14 +128,14 @@ def get_by_id():
 def add_book_form():
     if request.method == 'POST':
         
-        start_date=request.form.get('start_date')
-        end=request.form.get('end')
+        month=request.form.get('month')
+        date=request.form.get('date')
         event=request.form.get('event')
         try:
             holiday=Holiday(
     
-                start_date=start_date,
-                end=end,
+                month=month,
+                date=date,
                 event=event
             )
             
@@ -145,7 +145,6 @@ def add_book_form():
         except Exception as e:
             return(str(e))
     return render_template("getdata.html")
-
 @app.route("/add/studentinfo",methods=['GET', 'POST'])
 def add_student_info():
     if request.method == 'POST':
