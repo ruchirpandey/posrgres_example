@@ -74,7 +74,7 @@ def get_by_id():
 
     try: 
         if action=='Holiday':
-            holiday=Holiday.query.filter_by(start.strftime("%B") == month).all()
+            holiday=Holiday.query.filter_by(month=month).all()
             
             holiday_count=Holiday.query.filter_by(month=month).count()
             print("count the holidays",holiday_count, len(holiday))
@@ -84,7 +84,6 @@ def get_by_id():
             #print("Event is",holiday.event)
             if(len(holiday)==0):
                  response =  """
-
                         {0}
                     
                         """.format("There are no holidays in month of "+ month)
@@ -105,7 +104,6 @@ def get_by_id():
 
                 print("result is", Result)
                 response = response + """
-
                         {0}
                     
                         """.format(Result,)
@@ -122,7 +120,8 @@ def get_by_id():
             reply = {"fulfillmentText": response,}
         #return jsonify(holiday.serialize())
     except Exception as e:
-	    return(str(e))
+        return(str(e))
+
 
 @app.route("/add/form",methods=['GET', 'POST'])
 def add_book_form():
@@ -145,6 +144,7 @@ def add_book_form():
         except Exception as e:
             return(str(e))
     return render_template("getdata.html")
+    
 @app.route("/add/studentinfo",methods=['GET', 'POST'])
 def add_student_info():
     if request.method == 'POST':
