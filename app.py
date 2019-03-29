@@ -264,12 +264,12 @@ def get1():
     print("helloooo")
 
     req = request.get_json(silent=True, force=True)
-    action = req['queryResult']['parameters']['Exams_schedule']
+    action = req['queryResult']['parameters']['Exams_schedule.Exams_schedule-custom.Exams_schedule-custom-custom']
     course = req['queryResult']['parameters']['Courses']
-    semester = req['queryResult']['parameters']['sem_no']
+    sem_no = req['queryResult']['parameters']['sem_no']
     branch = req['queryResult']['parameters']['Branch']
     print("action is", action)
-    print("month is", month)
+    print("course is", course)
    
 
     try: 
