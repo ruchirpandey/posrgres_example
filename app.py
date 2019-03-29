@@ -259,5 +259,71 @@ def get_schedule():
     except Exception as e:
         return(str(e))
 
+@app.route("/get1",methods=['GET', 'POST'] )
+def get1():
+    print("helloooo")
+
+    req = request.get_json(silent=True, force=True)
+    action = req['queryResult']['parameters']['Exams_schedule']
+    course = req['queryResult']['parameters']['Courses']
+    semester = req['queryResult']['parameters']['number']
+    branch = req['queryResult']['parameters']['Branch']
+    print("action is", action)
+    print("month is", month)
+   
+
+    try: 
+        if action=='Exams_schedule.Exams_schedule-custom.Exams_schedule-custom-custom':
+            schedule=Schedule.query.filter_by(course=course , semester=semsester, branch=Branch).all()
+            
+            #holiday_count=Holiday.query.filter_by(month=month).count()
+            #print("count the holidays",holiday_count, len(holiday))
+
+            #print("Month is",row.month)
+            #print("Date is",holiday.date)
+            #print("Event is",holiday.event)
+            if(len(schedule)==0):
+                 response =  """
+                        {0}
+                    
+                        """.format("Schedule updation is pending for now. Please check after some time")
+                 reply = {"fulfillmentText": response}
+                 #print("hi there")
+                 return jsonify(reply)
+            i = 0
+            Result=''
+            response=''
+            reply= ''
+            for row in schedule:
+
+                i = i + 1
+                print("print rows", row.date, row.sub_code, row.subject)
+
+                Result= 'There is a holiday in the month of '+ str(row.date) + ' on'+str(row.sub_code) + 'for the occasion ' + str(row.subject) + '  '  
+           # Result= 'Dear candidate there is one holiday in the month of {0}'.format(holiday.month)
+
+                print("result is", Result)
+                response = response + """
+                        {0}
+                    
+                        """.format(Result,)
+                
+                reply = {"fulfillmentText": response,}
+
+            return jsonify(reply)
+        else:
+
+    
+            response =  """
+                    Response : {0}
+                    """.format("action is not valid")
+            reply = {"fulfillmentText": response,}
+        #return jsonify(holiday.serialize())
+    except Exception as e:
+        return(str(e))
+
+
+
+
 if __name__ == '__main__':
     app.run()
