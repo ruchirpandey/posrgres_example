@@ -264,7 +264,7 @@ def get1():
     print("helloooo")
 
     req = request.get_json(silent=True, force=True)
-    action = req['queryResult']['parameters']['Exams_schedule.Exams_schedule-custom.Exams_schedule-custom-custom']
+    action = req['queryResult']['parameters']['Exams_schedule']
     course = req['queryResult']['parameters']['Courses']
     sem_no = req['queryResult']['parameters']['sem_no']
     branch = req['queryResult']['parameters']['Branch']
@@ -273,7 +273,7 @@ def get1():
    
 
     try: 
-        if action=='Exams_schedule.Exams_schedule-custom.Exams_schedule-custom-custom':
+        if action=='Exams_schedule':
             schedule=Schedule.query.filter_by(course=course , semester=semsester, branch=Branch).all()
             
             #holiday_count=Holiday.query.filter_by(month=month).count()
