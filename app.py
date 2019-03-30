@@ -61,7 +61,7 @@ def get_by_id():
     action = req['queryResult']['parameters']['function']
     month = req['queryResult']['parameters']['Months']
     print("action is", action)
-    print("month is", month)
+    print("month is", start_date.strftime("%B"))
     #today_month = datetime.today().month
     #print('today_month', today_month)
     #months = Holiday.query.filter_by(extract('month', Holiday.datetime) == datetime.today().month.strftime("%B")).all()
