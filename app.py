@@ -127,14 +127,14 @@ def get_by_id():
 def add_book_form():
     if request.method == 'POST':
         
-        month=request.form.get('month')
-        date=request.form.get('date')
+        start_date=request.form.get('start_date')
+        end_date=request.form.get('end_date')
         event=request.form.get('event')
         try:
             holiday=Holiday(
     
-                month=month,
-                date=date,
+                start_date=start_date,
+                end_date=end_date,
                 event=event
             )
             
