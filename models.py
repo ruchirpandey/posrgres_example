@@ -69,6 +69,33 @@ class Schedule(db.Model):
             'subject':self.subject
         }
 
+class Timetable(db.Model):
+    __tablename__ = 'timetable'
+
+   
+    id = db.Column(db.Integer, primary_key=True)
+    course = db.Column(db.String())
+    branch = db.Column(db.String())
+    semester = db.Column(db.String())
+    
+
+    def __init__(self, course, branch, semester):
+        self.course = course
+        self.branch = branch
+        self.semester = semester
+        
+    def __repr__(self):
+        return '<id {}>'.format(self.id)
+
+    def serialize(self):
+        return {
+            'id': self.id, 
+            'course': self.course,
+            'branch': self.branch,
+            'semester': self.semester,
+            
+        }
+
 
 
 class Student_Info(db.Model):

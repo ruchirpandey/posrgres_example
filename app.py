@@ -326,5 +326,40 @@ def get1():
 
 
 
+@app.route("/add/timetable",methods=['GET', 'POST'])
+def add_timetable():
+    if request.method == 'POST':
+        course=request.form.get('course')
+        branch=request.form.get('branch')
+        semester=request.form.get('semester')
+        
+        try:
+            data=Timetable(
+                course=course,
+                branch=branch,
+                semester=semester,
+                
+            )
+            db.session.add(data)
+            db.session.commit()
+            return "schedule added. schedule id={}".format(data.id)
+        except Exception as e:
+            return(str(e))
+    return render_template("year.html")
+
+@app.route("/get/timetable")
+def get_timetable():
+    try:
+        
+        timetable=Timetable.query.all()
+        return render_template("list.html",timetable = timetable)
+
+        return  jsonify([e.serialize() for e in books])
+    except Exception as e:
+        return(str(e))
+
+
+
+
 if __name__ == '__main__':
     app.run()
