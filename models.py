@@ -15,7 +15,7 @@ class Holiday(db.Model):
 
     event = db.Column(db.String())
 
-    def __init__(self, start_date, date, event):
+    def __init__(self, start_date, end_date, event):
         
         self.start_date = start_date
         self.end_date = end_date
