@@ -358,6 +358,10 @@ def get_timetable():
     except Exception as e:
         return(str(e))
 
+def test():
+    return render_template("test.html")
+
+
 
 
 
