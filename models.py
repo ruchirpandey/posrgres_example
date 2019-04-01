@@ -77,12 +77,27 @@ class Timetable(db.Model):
     course = db.Column(db.String())
     branch = db.Column(db.String())
     semester = db.Column(db.String())
+    timing = db.Column(db.String())
+    monday = db.Column(db.String())
+    tuesday = db.Column(db.String())
+    wednesday = db.Column(db.String())
+    thursday = db.Column(db.String())
+    friday = db.Column(db.String())
+    saturday = db.Column(db.String())
     
 
-    def __init__(self, course, branch, semester):
+    def __init__(self, course, branch, semester, timing, monday, tuesday, wednesday, thursday, friday, saturday):
         self.course = course
         self.branch = branch
         self.semester = semester
+        self.timing = timing
+        self.monday = monday
+        self.tuesday = tuesday
+        self.wednesday = wednesday
+        self.thursday = thursday
+        self.friday = friday
+        self.saturday = saturday
+
         
     def __repr__(self):
         return '<id {}>'.format(self.id)
@@ -93,6 +108,13 @@ class Timetable(db.Model):
             'course': self.course,
             'branch': self.branch,
             'semester': self.semester,
+            'timing': self.timing,
+            'monday': self.monday,
+            'tuesday': self.tuesday,
+            'wednesday': self.wednesday,
+            'thursday': self.thursday,
+            'friday': self.friday,
+            'saturday': self.saturday
             
         }
 

@@ -332,17 +332,32 @@ def add_timetable():
         course=request.form.get('course')
         branch=request.form.get('branch')
         semester=request.form.get('semester')
+        timing=request.form.get('timing')
+        monday=request.form.get('monday')
+        tuesday=request.form.get('tuesday')
+        wednesday=request.form.get('wednesday')
+        thursday=request.form.get('thursday')
+        friday=request.form.get('friday')
+        saturday=request.form.get('saturday')
+        
         
         try:
-            data=Timetable(
+            timetable=Timetable(
                 course=course,
                 branch=branch,
                 semester=semester,
-                
+                timing=timing,
+                monday=monday,
+                tuesday=tuesday,
+                wednesday=wednesday,
+                thursday=thursday,
+                friday=friday,
+                saturday=saturday
+
             )
-            db.session.add(data)
+            db.session.add(timetable)
             db.session.commit()
-            return "schedule added. schedule id={}".format(data.id)
+            return "schedule added. schedule id={}".format(timetable.id)
         except Exception as e:
             return(str(e))
     return render_template("year.html")
