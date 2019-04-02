@@ -87,7 +87,20 @@ button:hover {
   <h1>Register:</h1>
   <!-- One "tab" for each step in the form: -->
   <div class="tab">Name:
-                    <input list="branch" name="branch">
+
+                  <label for="course">course</label>
+                  
+                    
+                    <input list="course" placeholder="course" name="course">
+                    <datalist id="course">
+                    <option value="BCA">
+                    <option value="B.Tech">
+                    <option value="Polytechnic">
+                    <option value="MCA">
+                    
+                    </datalist>
+                   <p>  <label for="branch">branch</label>
+                    <input list="branch" placeholder="branch" name="branch">
                     <datalist id="branch">
                     <option value="Electrical">
                     <option value="Electronics">
@@ -96,24 +109,41 @@ button:hover {
                     <option value="Civil">
                     <option value="N/A">
                     
-                    </datalist><p>
+                    </datalist></p>
 
+
+                      <p><label for="semester">semester</label>
+                        <input list="semester" placeholder="semester" name="semester">
+                    <datalist id="semester">
+               
+                    <option>I</option>
+                    <option>II</option>
+                    <option>III</option>
+                    <option>IV</option>
+                    <option>V</option>
+                    <option>VI</option>
+                    <option>VII</option>
+                    <option>VIII</option>
                     
-    <p><input placeholder="Last name..." oninput="this.className = ''" name="lname"></p>
+                      </datalist></p>
   </div>
   <div class="tab">Contact Info:
-    <p><input placeholder="E-mail..." oninput="this.className = ''" name="email"></p>
-    <p><input placeholder="Phone..." oninput="this.className = ''" name="phone"></p>
+
+
+   <p> <label for="timing">timing</label>
+                    <input class="form-control " type="text" placeholder="timing" id="timing" name="timing"></p>
+    <p><label for="monday">Monday</label>
+                    <input class="form-control " type="text" placeholder="monday" id="monday" name="monday"></p>
+
+    <p> <label for="tuesday">Tuesday</label>
+                 <input class="form-control " type="text" placeholder="tuesday" id="tuesday" name="tuesday"></p>
+    <p> <label for="wednesday">Wednesday</label>
+                    <input class="form-control " type="text" placeholder="wednesday" id="wednesday" name="wednesday"></p>
+   <p><label for="thursday">Thursday</label>
+                    <input class="form-control " type="text" placeholder="thursday" id="thursday" name="thursday"></p>
+
   </div>
-  <div class="tab">Birthday:
-    <p><input placeholder="dd" oninput="this.className = ''" name="dd"></p>
-    <p><input placeholder="mm" oninput="this.className = ''" name="nn"></p>
-    <p><input placeholder="yyyy" oninput="this.className = ''" name="yyyy"></p>
-  </div>
-  <div class="tab">Login Info:
-    <p><input placeholder="Username..." oninput="this.className = ''" name="uname"></p>
-    <p><input placeholder="Password..." oninput="this.className = ''" name="pword" type="password"></p>
-  </div>
+  
   <div style="overflow:auto;">
     <div style="float:right;">
       <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
@@ -124,8 +154,7 @@ button:hover {
   <div style="text-align:center;margin-top:40px;">
     <span class="step"></span>
     <span class="step"></span>
-    <span class="step"></span>
-    <span class="step"></span>
+    
   </div>
 </form>
 
