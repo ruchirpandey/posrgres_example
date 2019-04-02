@@ -364,7 +364,7 @@ def add_timetable():
 
 @app.route("/add/time.html")
 def add_time():
-     if request.method == 'POST':
+     
 
      return render_template("time.html")
 
