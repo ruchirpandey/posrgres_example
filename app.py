@@ -364,7 +364,7 @@ def add_timetable():
 
 @app.route("/add/time.html")
 def add_time():
-     return render_template("year.html")
+     return render_template("time.html")
 
 
 @app.route("/get/timetable")
