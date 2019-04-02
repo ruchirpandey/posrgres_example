@@ -362,6 +362,11 @@ def add_timetable():
             return(str(e))
     return render_template("year.html")
 
+@app.route("/add/time.html")
+def add_time():
+     return render_template("year.html")
+
+
 @app.route("/get/timetable")
 def get_timetable():
     try:
