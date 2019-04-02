@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <head>
     <meta charset="UTF-8">
@@ -10,23 +11,96 @@
         crossorigin="anonymous">
 </head>
 
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f1f1f1;
+}
+
+#regForm {
+  background-color: #ffffff;
+  margin: 100px auto;
+  font-family: Raleway;
+  padding: 40px;
+  width: 70%;
+  min-width: 300px;
+}
+
+h1 {
+  text-align: center;  
+}
+
+input {
+  padding: 10px;
+  width: 100%;
+  font-size: 17px;
+  font-family: Raleway;
+  border: 1px solid #aaaaaa;
+}
+
+/* Mark input boxes that gets an error on validation: */
+input.invalid {
+  background-color: #ffdddd;
+}
+
+/* Hide all steps by default: */
+.tab {
+  display: none;
+}
+
+button {
+  background-color: #4CAF50;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 17px;
+  font-family: Raleway;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+#prevBtn {
+  background-color: #bbbbbb;
+}
+
+/* Make circles that indicate the steps of the form: */
+.step {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbbbbb;
+  border: none;  
+  border-radius: 50%;
+  display: inline-block;
+  opacity: 0.5;
+}
+
+.step.active {
+  opacity: 1;
+}
+
+/* Mark the steps that are finished and valid: */
+.step.finish {
+  background-color: #4CAF50;
+}
+</style>
 <body>
-    <div class="container">
 
-        <div class="container">
-            <br>
-            <br>
+<form id="regForm" action="/action_page.php">
+  <h1>course details</h1>
+  <!-- One "tab" for each step in the form: -->
+  <div class="tab">Name:
 
-            <div class="row align-items-center justify-content-center">
-                <h1>Enter Course Details</h1>
-            </div>
-
-
-            <br>
-                <label for="course">course</label>
-                <div class="tab">
+                  <label for="course">course</label>
+                  
                     
-                    <input list="course" name="course">
+                    <input list="course" placeholder="course" name="course">
                     <datalist id="course">
                     <option value="BCA">
                     <option value="B.Tech">
@@ -34,10 +108,8 @@
                     <option value="MCA">
                     
                     </datalist>
-                    
-                     <label for="branch">branch</label>
-                
-                    <input list="branch" name="branch">
+                   <p>  <label for="branch">branch</label>
+                    <input list="branch" placeholder="branch" name="branch">
                     <datalist id="branch">
                     <option value="Electrical">
                     <option value="Electronics">
@@ -46,14 +118,11 @@
                     <option value="Civil">
                     <option value="N/A">
                     
-                    </datalist>
-               
-           
+                    </datalist></p>
 
-                <label for="semester">semester</label>
-                
-                    
-                    <input list="semester" name="semester">
+
+                      <p><label for="semester">semester</label>
+                        <input list="semester" placeholder="semester" name="semester">
                     <datalist id="semester">
                
                     <option>I</option>
@@ -65,16 +134,26 @@
                     <option>VII</option>
                     <option>VIII</option>
                     
-                      </datalist>
-                </div>
-                <a href="time.html"><button>Add timetable</button></a>
-                
-            
-            </form>
-            <br><br>
-        </div>
-    </div>
-    <div style="overflow:auto;">
+                      </datalist></p>
+  </div>
+  <div class="tab">Contact Info:
+
+
+   <p> <label for="timing">timing</label>
+                    <input class="form-control " type="text" placeholder="timing" id="timing" name="timing"></p>
+    <p><label for="monday">Monday</label>
+                    <input class="form-control " type="text" placeholder="monday" id="monday" name="monday"></p>
+
+    <p> <label for="tuesday">Tuesday</label>
+                 <input class="form-control " type="text" placeholder="tuesday" id="tuesday" name="tuesday"></p>
+    <p> <label for="wednesday">Wednesday</label>
+                    <input class="form-control " type="text" placeholder="wednesday" id="wednesday" name="wednesday"></p>
+   <p><label for="thursday">Thursday</label>
+                    <input class="form-control " type="text" placeholder="thursday" id="thursday" name="thursday"></p>
+
+  </div>
+  
+  <div style="overflow:auto;">
     <div style="float:right;">
       <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
       <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
@@ -84,8 +163,7 @@
   <div style="text-align:center;margin-top:40px;">
     <span class="step"></span>
     <span class="step"></span>
-    <span class="step"></span>
-    <span class="step"></span>
+    
   </div>
 </form>
 
@@ -164,17 +242,5 @@ function fixStepIndicator(n) {
 }
 </script>
 
-
-        
-
-
-
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js " integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo "
-        crossorigin="anonymous "></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js " integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49 "
-        crossorigin="anonymous "></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js " integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy "
-        crossorigin="anonymous "></script>
 </body>
-
 </html>
