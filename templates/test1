@@ -87,7 +87,18 @@ button:hover {
   <h1>Register:</h1>
   <!-- One "tab" for each step in the form: -->
   <div class="tab">Name:
-    <p><input placeholder="First name..." oninput="this.className = ''" name="fname"></p>
+                    <input list="branch" name="branch">
+                    <datalist id="branch">
+                    <option value="Electrical">
+                    <option value="Electronics">
+                    <option value="Mechanical">
+                    <option value="Computer Science">
+                    <option value="Civil">
+                    <option value="N/A">
+                    
+                    </datalist><p>
+
+                    
     <p><input placeholder="Last name..." oninput="this.className = ''" name="lname"></p>
   </div>
   <div class="tab">Contact Info:
