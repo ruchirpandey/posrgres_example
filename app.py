@@ -277,7 +277,7 @@ def get1():
 
     try: 
         if action=='Exams_schedule.Exams_schedule-custom':
-            schedule=Schedule.query.filter_by(course=course , semester=semsester, branch=Branch).all()
+            schedule=Schedule.query.filter_by(course=course , semester=sem_no, branch=branch).all()
             
             #holiday_count=Holiday.query.filter_by(month=month).count()
             #print("count the holidays",holiday_count, len(holiday))
