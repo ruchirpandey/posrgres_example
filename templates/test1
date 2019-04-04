@@ -83,7 +83,7 @@ button:hover {
 </style>
 <body>
 
-<form id="regForm" action="/action_page.php">
+<form id="regForm" action="/test1.html" method="post">
   <h1>Register:</h1>
   <!-- One "tab" for each step in the form: -->
   <div class="tab">Name:
@@ -130,17 +130,14 @@ button:hover {
   <div class="tab">Contact Info:
 
 
-   <p> <label for="timing">timing</label>
-                    <input class="form-control " type="text" placeholder="timing" id="timing" name="timing"></p>
-    <p><label for="monday">Monday</label>
-                    <input class="form-control " type="text" placeholder="monday" id="monday" name="monday"></p>
+   <p> <label for="date">date</label>
+                    <input class="form-control " type="date" placeholder="date" id="date" name="date"></p>
+    <p><label for="sub_code">subject_code</label>
+                    <input class="form-control " type="text" placeholder="sub_code" id="sub_code" name="sub_code"></p>
 
-    <p> <label for="tuesday">Tuesday</label>
-                 <input class="form-control " type="text" placeholder="tuesday" id="tuesday" name="tuesday"></p>
-    <p> <label for="wednesday">Wednesday</label>
-                    <input class="form-control " type="text" placeholder="wednesday" id="wednesday" name="wednesday"></p>
-   <p><label for="thursday">Thursday</label>
-                    <input class="form-control " type="text" placeholder="thursday" id="thursday" name="thursday"></p>
+    <p> <label for="subject">Subject</label>
+                    <input class="form-control " type="text" placeholder="subject" id="subject" name="subject"></p>
+    
 
   </div>
   

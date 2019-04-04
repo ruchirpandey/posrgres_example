@@ -249,7 +249,7 @@ def add_schedule():
             return "schedule added. schedule id={}".format(data.id)
         except Exception as e:
             return(str(e))
-    return render_template("exam.html")
+    return render_template("test1.html")
 
 @app.route("/getschedule")
 def get_schedule():
