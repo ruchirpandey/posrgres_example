@@ -360,7 +360,7 @@ def add_timetable():
             return "schedule added. schedule id={}".format(timetable.id)
         except Exception as e:
             return(str(e))
-    return render_template("year.html")
+    return render_template("time.html")
 
 @app.route("/add/time.html")
 def add_time():
