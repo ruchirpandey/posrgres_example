@@ -357,16 +357,13 @@ def add_timetable():
             )
             db.session.add(timetable)
             db.session.commit()
-            return "schedule added. schedule id={}".format(timetable.id)
+            return "timetable added. timetable id={}".format(timetable.id)
         except Exception as e:
+            print("hujhjgjhg")
             return(str(e))
-    return render_template("time.html")
+    return render_template("year.html")
 
-@app.route("/add/time.html")
-def add_time():
-     
 
-     return render_template("time.html")
 
 
 @app.route("/get/timetable")
