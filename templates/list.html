@@ -149,6 +149,31 @@ button:hover {
          {% endfor %}
       </table>
 
+   <H1> Syllabus </H1>
+      <table border = 1>
+         <thead>
+            <td>units</td>
+            <td>Course</td>
+            <td>Branch</td>
+            <td>Semester</td>
+            <td>Sub_code</td>
+            <td>Subject</td>
+            
+         </thead>
+         
+         {% for row in syllabus %}
+            <tr>
+                <td>{{row["units"]}}</td>
+               <td>{{row["course"]}}</td>
+                <td>{{row["branch"]}}</td>
+               <td>{{row["semester"]}}</td>
+               <td> {{ row["sub_code"]}}</td>
+               <td> {{ row["subject"]}}</td>
+
+             
+            </tr>
+         {% endfor %}
+
 
 
       <H1> Timetable </H1>

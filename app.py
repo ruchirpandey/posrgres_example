@@ -382,6 +382,42 @@ def get_timetable():
 def test():
     return render_template("test1.html")
 
+@app.route("/add/syllabus",methods=['GET', 'POST'])
+def add_syllabus():
+    if request.method == 'POST':
+        units= request.form.get('units')
+        course=request.form.get('course')                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
+        branch=request.form.get('branch')
+        semester=request.form.get('semester')
+        sub_code=request.form.get('sub_code')
+        subject=request.form.get('subject')
+        try:
+            data=Syllabus(
+                units=units,
+                course=course,
+                branch=branch,
+                semester=semester,
+                sub_code=sub_code,
+                subject=subject
+            )
+            db.session.add(data)
+            db.session.commit()
+            return "syllabus added. syllabus id={}".format(data.id)
+        except Exception as e:
+            return(str(e))
+    return render_template("syllabus.html")
+
+@app.route("/getsyllabus")
+def get_syllabus():
+    try:
+        
+        syllabus=Syllabus.query.all()
+        return render_template("list.html",syllabus = syllabus)
+
+        return  jsonify([e.serialize() for e in books])
+    except Exception as e:
+        return(str(e))
+
 
 
 
