@@ -267,7 +267,7 @@ def get1():
     print("helloooo")
 
     req = request.get_json(silent=True, force=True)
-    action = req['queryResult']['parameters']['Exams_schedule.Exams_schedule-custom']
+    action = req['queryResult']['parameters']['function1']
     course = req['queryResult']['parameters']['Courses']
     sem_no = req['queryResult']['parameters']['sem_no']
     branch = req['queryResult']['parameters']['Branch']
