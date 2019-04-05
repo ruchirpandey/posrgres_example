@@ -19,6 +19,7 @@ from models import Holiday
 from models import Student_Info
 from models import Schedule
 from models import Timetable
+from models import Syllabus
 
 
 #from models import Holiday
