@@ -144,11 +144,28 @@ button:hover {
     <br>
    <p> <label for="timing">timing</label>
                     <input class="form-control " type="text" placeholder="timing" id="timing" name="timing"> </p>
+    <p><label for="semester">semester</label>
+                        <input list="semester" placeholder="semester" name="semester">
+                    <datalist id="semester">
+               
+                    <option>I</option>
+                    <option>II</option>
+                    <option>III</option>
+                    <option>IV</option>
+                    <option>V</option>
+                    <option>VI</option>
+                    <option>VII</option>
+                    <option>VIII</option>
+                    
+                      </datalist></p>
+                    
     <p><label for="monday">Monday</label>
                     <input class="form-control " type="text" placeholder="monday" id="monday" name="monday"></p>
 
     <p> <label for="tuesday">Tuesday</label>
                  <input class="form-control " type="text" placeholder="tuesday" id="tuesday" name="tuesday"></p>
+                      {% if monday == tuesday }
+                       
     <p> <label for="wednesday">Wednesday</label>
                     <input class="form-control " type="text" placeholder="wednesday" id="wednesday" name="wednesday"></p>
    <p><label for="thursday">Thursday</label>
