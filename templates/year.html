@@ -38,6 +38,8 @@ input {
   width: 100%;
   font-size: 17px;
   font-family: Raleway;
+  border: 1px solid #aaaaaa;
+}
 
 /* Mark input boxes that gets an error on validation: */
 input.invalid {
@@ -52,8 +54,6 @@ input.invalid {
 button {
   background-color: #4CAF50;
   color: #ffffff;
-  border: 1px solid #aaaaaa;
-}
   border: none;
   padding: 10px 20px;
   font-size: 17px;
@@ -143,21 +143,7 @@ button:hover {
     <br>
     <br>
    <p> <label for="timing">timing</label>
-                    <input list="timing" placeholder="timing" id="timing" name="timing">
-                    <datalist id="timing">
-               
-                    <option>8:50-9:40</option>
-                    <option>9:40-10:30</option>
-                    <option>10:40-11:30</option>
-                    <option>11:30-12:20</option>
-                    <option>12:20-1:10</option>
-                    <option>1:10-2:00</option>
-                    <option>2:00-2:50</option>
-                    <option>2:50-3:40</option>
-                    <option>3:40-4:30</option>
-                    
-                      </datalist></p>
-                  
+                    <input class="form-control " type="text" placeholder="timing" id="timing" name="timing"> </p>
     <p><label for="monday">Monday</label>
                     <input class="form-control " type="text" placeholder="monday" id="monday" name="monday"></p>
 
